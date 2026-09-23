@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/status-not%20started-lightgrey" alt="Project status: not started">
+  <img src="https://img.shields.io/badge/status-started-lightgreen" alt="Project status: started">
   <img src="https://img.shields.io/badge/research-NLP-blue" alt="NLP">
   <img src="https://img.shields.io/badge/focus-human%20vs%20LLM%20dialogue-purple" alt="Research focus">
   <img src="https://img.shields.io/badge/license-TBD-lightgrey" alt="License to be decided">
