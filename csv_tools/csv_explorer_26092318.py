@@ -1,3 +1,4 @@
+from pathlib import Path
 import sys
 import pandas as pd
 
@@ -12,10 +13,11 @@ def spacer():
     print("\n==========\n")
 
 # INPUT
-df_hum_train = pd.read_csv("data/raw/empathetic_dialogues/train.csv", on_bad_lines="skip")
-df_hum_valid = pd.read_csv("data/raw/empathetic_dialogues/valid.csv", on_bad_lines="skip")
-df_hum_test = pd.read_csv("data/raw/empathetic_dialogues/test.csv", on_bad_lines="skip")
-df_llm = pd.read_csv("data/raw/gpt_empathetic_dialogues/2GPTEmpathicDialoguesDataset.csv", on_bad_lines="skip")
+BASE_DIR = Path(__file__).resolve().parent
+df_hum_train = pd.read_csv(BASE_DIR / ".." / "data" / "raw" / "empathetic_dialogues" / "train.csv", on_bad_lines="skip")
+df_hum_valid = pd.read_csv(BASE_DIR / ".." / "data" / "raw" / "empathetic_dialogues" / "valid.csv", on_bad_lines="skip")
+df_hum_test = pd.read_csv(BASE_DIR / ".." / "data" / "raw" / "empathetic_dialogues" / "test.csv", on_bad_lines="skip")
+df_llm = pd.read_csv(BASE_DIR / ".." / "data" / "raw" / "gpt_empathetic_dialogues" / "2GPTEmpathicDialoguesDataset.csv", on_bad_lines="skip")
 
 print("===== HUM =====")
 

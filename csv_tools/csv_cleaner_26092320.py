@@ -1,3 +1,4 @@
+from pathlib import Path
 import sys
 import re
 import pandas as pd
@@ -31,7 +32,8 @@ def corrupt_trim(text):
     return any(re.search(p, text) for p in patterns)
 
 # INPUT
-df_hum = pd.read_csv("data/raw/empathetic_dialogues/train.csv", on_bad_lines="skip")
+BASE_DIR = Path(__file__).resolve().parent
+df_hum = pd.read_csv(BASE_DIR / ".." / "data" / "raw" / "empathetic_dialogues" / "train.csv", on_bad_lines="skip")
 
 mask = df_hum["utterance"].apply(corrupt_trim)
 corrupted_conv_ids = df_hum.loc[mask, "conv_id"].unique()
@@ -46,7 +48,7 @@ df_hum = (
     .to_frame(name="dialogue")
 )
 
-df_llm = pd.read_csv("data/raw/gpt_empathetic_dialogues/2GPTEmpathicDialoguesDataset.csv", on_bad_lines="skip")
+df_llm = pd.read_csv(BASE_DIR / ".." / "data" / "raw" / "gpt_empathetic_dialogues" / "2GPTEmpathicDialoguesDataset.csv", on_bad_lines="skip")
 
 df_llm = df_llm[["processed"]]
 df_llm.columns = ["dialogue"]
