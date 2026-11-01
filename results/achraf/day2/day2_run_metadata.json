@@ -1,0 +1,11 @@
+{
+  "input_sha256": "a14ce15d57e5620459d0cdce178ae89d1bcfe985e42a7491bea595bfe848c1c3",
+  "syntax_inference_rerun": false,
+  "parser_model": "en_core_web_sm",
+  "n_pairs": 19533,
+  "cache_input_sha256_lf": "01f320547d6e49d7483190579fb959ca5695d13479a53b961caf28f0a4696cf7",
+  "cache_sha256_lf": "c1c0ff82eee67273bb84f1885606c6c7775eb9e0848f50ea364b0338d57d3da7",
+  "inference_provenance": {
+    "status": "Historical cache; exact inference environment and model revision were not recorded."
+  }
+}
