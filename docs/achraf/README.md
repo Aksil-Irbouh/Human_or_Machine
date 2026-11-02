@@ -2,15 +2,65 @@
 
 This contribution covers descriptive linguistic features (Day 2) and conversational alignment (Day 3). It does not train a classifier or replace the group's modelling data, split or generalisation pipeline.
 
+## Analysis Overview
+
+This contribution focuses on two complementary aspects of human–LLM dialogue comparison: **linguistic characteristics** and **conversational alignment**.
+
+### 1. Linguistic and Syntactic Comparison
+
+Compares human-written and GPT-generated dialogues using stylometric features, syntactic measures, and repetition analysis.
+
+Two datasets were analysed:
+
+- **Original dataset (19,533 matched pairs):** The initial analysis, with results stored in `results/achraf/day2/`.
+- **Shared dataset (17,780 matched pairs):** An additional analysis using the group's common dataset, with results stored in `results/achraf/day2_shared_17780/`.
+
+The corresponding notebooks are `linguistic_features.ipynb` and `linguistic_features_shared_17780.ipynb`.
+
+Both analyses use comparable methods, allowing results to be examined across the two dataset versions. The shared dataset preserves all 17,780 pairs, including 31 pairs with known incomplete human dialogues.
+
+For the shared-dataset workflow and input provenance, see `docs/achraf/SHARED_17780.md`.
+
+### 2. Conversational Alignment
+
+Examines how linguistic similarity evolves between successive contributions in human–human and human–LLM-generated dialogues.
+
+The analysis uses **320 manually reviewed matched pairs**, balanced across 32 emotions, and includes:
+
+- Lexical overlap using Jaccard similarity.
+- Semantic similarity using SentenceTransformer embeddings and cosine similarity.
+- Conversational progression and variability.
+- Paired comparisons, bootstrap confidence intervals, and sensitivity checks.
+
+The corresponding notebook is `conversational_alignment.ipynb`, with results stored in `results/achraf/day3/`.
+
+These measures describe conversational similarity and alignment patterns; higher similarity alone does not establish stronger adaptation or empathy.
+
+### Directory Naming Convention
+
+The names `day2` and `day3` refer to the original development stages of the project, not separate experimental days.
+
+| Directory | Description |
+|---|---|
+| `results/achraf/day2/` | Linguistic and syntactic analysis — 19,533 matched pairs |
+| `results/achraf/day2_shared_17780/` | Linguistic and syntactic analysis — 17,780 shared matched pairs |
+| `results/achraf/day3/` | Conversational alignment — 320 reviewed matched pairs |
+
+The original directory names have been retained to preserve compatibility with existing notebooks, scripts, and file references.
+
+
 ## Included code
 
 | File | Purpose |
 |---|---|
 | `scripts/achraf/prepare_dialogues.py` | Reconstruct the minimally cleaned 19,533 matched pairs from the repository's raw train and GPT CSVs |
+| `scripts/achraf/prepare_shared_dialogues.py` | Validate and adapt the group's 17,780-pair dataset without changing dialogue text |
 | `scripts/achraf/eda_statistics.py` | Reproduce dialogue word counts and explicitly labelled sentence/line estimates |
 | `scripts/achraf/stylometric_analysis.py` | Flo's 31 feature definitions plus contractions, repeated bigrams and paired window controls |
 | `notebooks/achraf/linguistic_features.ipynb` | Roland-based dependency extraction, paired effects, feature merge and Day 2 figures |
+| `notebooks/achraf/linguistic_features_shared_17780.ipynb` | Reproduce the linguistic and syntactic comparisons on the shared 17,780-pair dataset |
 | `notebooks/achraf/conversational_alignment.ipynb` | Lexical and semantic adjacency, progression, variability, bootstrap and first-three checks |
+
 
 All function calls, signatures, assignments and comprehensions stay on one physical line. Multi-line Python blocks retain their normal indentation. Learning examples and debugging histories remain in the original personal notebooks, outside this contribution.
 
@@ -44,6 +94,7 @@ The dependencies file is a separate analysis list, not a tested replacement for 
 ## Sample sizes and interpretation
 
 - Full descriptive dataset: 19,533 matched pairs, 39,066 dialogues.
+- Shared linguistic-analysis dataset: 17,780 matched pairs, 35,560 dialogues. All pairs retained, including 31 with known incomplete human dialogues.
 - Reviewed alignment subset: 320 matched pairs, 10 per each of 32 emotions, 640 dialogues. It is curated, not a random sample.
 - Repetition window comparison: the same 16,760 eligible pairs in both conditions. This is not the group's approximately 17k modelling subset.
 - The group's exact modelling IDs and common evaluation split remain a separate integration decision. The historical 80/10/10 split script is intentionally excluded because the repository README describes a different modelling split.
