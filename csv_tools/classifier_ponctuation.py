@@ -10,7 +10,7 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 
 # params
 df = pd.read_csv("../data/processed/paired_human_llm_dialogues.csv")
-N_WORDS = 80
+N_WORDS = 60
 rng = np.random.default_rng(42)
 
 # garder les paires de conv (humain et llm) avec au moins N_WORDS mots de chaque cote
