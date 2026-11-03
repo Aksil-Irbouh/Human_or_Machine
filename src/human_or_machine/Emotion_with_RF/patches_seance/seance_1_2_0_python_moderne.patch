@@ -1,0 +1,57 @@
+--- a/SEANCE_1_2_0.py
++++ b/SEANCE_1_2_0.py
+@@ -379,7 +379,7 @@
+ 			file_list = glob.glob(folder)
+ 			for files in file_list:
+ 				list = []
+-				comp = open(files,"rU").read().split("\n")
++				comp = open(files,"r").read().split("\n")
+ 				for line in comp:
+ 					list.append(line.split("\t"))
+ 				if system !="W":
+@@ -617,7 +617,7 @@
+ 		
+ 		print("Importing databases...\n")
+ 
+-		affect_list = open(resource_path('data_files/affective_list.txt'), 'rU').read()
++		affect_list = open(resource_path('data_files/affective_list.txt'), 'r').read()
+ 
+ 		#this cleans up the affect list
+ 		affect_list = re.sub('\t\t', '', affect_list)#makes all double tabs nothing
+@@ -634,7 +634,7 @@
+ 			entries = line.split("\t") #splits entries in .csv file at tab
+ 			affect_dict[entries[0]] = entries[1:]
+ 
+-		GI_list = open(resource_path('data_files/inquirerbasic.txt'), 'rU').readlines()
++		GI_list = open(resource_path('data_files/inquirerbasic.txt'), 'r').readlines()
+ 		GI_dict={}
+ 
+ 		for line in GI_list:
+@@ -644,11 +644,11 @@
+ 			##print entries[0]
+ 			
+ 		#defines program files
+-		lemma_list = open(resource_path('data_files/e_lemma_py_format_lower.txt'), 'rU').readlines()
+-		anew_list = open(resource_path('data_files/affective_norms.txt'), 'rU').readlines()
+-		sentic_list = open(resource_path('data_files/senticnet_data.txt'), 'rU').readlines()
+-		lu_hui_positive = open(resource_path('data_files/positive_words.txt'), 'rU').read().split("\n")
+-		lu_hui_negative = open(resource_path('data_files/negative_words.txt'), 'rU').read().split("\n")
++		lemma_list = open(resource_path('data_files/e_lemma_py_format_lower.txt'), 'r').readlines()
++		anew_list = open(resource_path('data_files/affective_norms.txt'), 'r').readlines()
++		sentic_list = open(resource_path('data_files/senticnet_data.txt'), 'r').readlines()
++		lu_hui_positive = open(resource_path('data_files/positive_words.txt'), 'r').read().split("\n")
++		lu_hui_negative = open(resource_path('data_files/negative_words.txt'), 'r').read().split("\n")
+ 		
+ 		components_2 = component_dicter(resource_path('components/C*.txt'))
+ 		
+@@ -1151,9 +1151,7 @@
+ 			dataQueue.put("Loading spaCy")
+ 			root.update_idletasks()
+ 			import spacy
+-			from spacy.util import set_data_path
+-			set_data_path(resource_path('en_core_web_sm'))
+-			nlp = spacy.load(resource_path('en_core_web_sm'))				
++			nlp = spacy.load('en_core_web_sm')				
+ 	
+ ####Beginning of file iteration#######
+ 		file_counter = 1
