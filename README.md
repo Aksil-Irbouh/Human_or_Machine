@@ -3,16 +3,14 @@
 ### Linguistic Patterns in Human & LLM-Generated Dialogue
 
 <p align="center">
-  <strong>Research project on conversational linguistics, alignment, and LLM-generated dialogue detection.</strong><br>
-  Telecom Paris · MS IA · IA717 — Natural Language Processing
+  <strong>Research project on conversational linguistics, alignment, and LLM-generated dialogue detection.</strong><br>  
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/status-completed-brightgreen" alt="Project status: completed">
   <img src="https://img.shields.io/badge/research-NLP-blue" alt="NLP">
   <img src="https://img.shields.io/badge/focus-human%20vs%20LLM%20dialogue-purple" alt="Research focus">
-  <img src="https://img.shields.io/badge/model-Sentence--BERT%20%7C%20DistilBERT-orange" alt="Sentence-BERT and DistilBERT">
-  <img src="https://img.shields.io/badge/license-TBD-lightgrey" alt="License to be decided">
+  <img src="https://img.shields.io/badge/model-Sentence--BERT%20%7C%20DistilBERT-orange" alt="Sentence-BERT and DistilBERT">  
 </p>
 
 ---
