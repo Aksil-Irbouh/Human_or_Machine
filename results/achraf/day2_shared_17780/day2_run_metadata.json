@@ -1,0 +1,19 @@
+{
+  "input_sha256": "693b94c995994ab3cdf47b863e44e34f579cedbe012af5a9d5a950b02a06f08f",
+  "syntax_inference_rerun": true,
+  "parser_model": "en_core_web_sm",
+  "n_pairs": 17780,
+  "spacy_version": "3.8.18",
+  "parser_model_version": "3.8.0",
+  "cache_input_sha256_lf": "693b94c995994ab3cdf47b863e44e34f579cedbe012af5a9d5a950b02a06f08f",
+  "cache_sha256_lf": "7117b66cac3e3297a9f85278fbd3f6a8c91a5b4872aea9556ce50a498fd82bbd",
+  "inference_provenance": {
+    "python_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "spacy": "3.8.18"
+    },
+    "model_revision": "Not recorded"
+  }
+}

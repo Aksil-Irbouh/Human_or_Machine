@@ -1,0 +1,14 @@
+{
+  "source_file": "paired_human_llm_dialogues.csv",
+  "source_sha256": "563eb5f5a3803e71a748303f9e18cc47733f2b2fe0f7fcd34990ee87cd6694b9",
+  "model_inputs_sha256": "693b94c995994ab3cdf47b863e44e34f579cedbe012af5a9d5a950b02a06f08f",
+  "n_pairs": 17780,
+  "n_dialogues": 35560,
+  "n_emotions": 32,
+  "text_preserved_exactly": true,
+  "excluded_pairs": 0,
+  "known_incomplete_human_pairs_retained": 31,
+  "known_missing_human_utterances": 50,
+  "preprocessing": "Shared export: lowercase and collapsed whitespace; no further cleaning.",
+  "utterance_counts": "Unavailable from flattened text; not inferred from line counts."
+}
