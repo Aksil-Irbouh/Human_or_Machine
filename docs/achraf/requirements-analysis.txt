@@ -1,0 +1,10 @@
+# Analysis imports; not a historical lockfile or a tested replacement for pyproject.toml.
+numpy
+pandas
+matplotlib
+scipy
+tqdm
+spacy>=3.8,<3.9
+sentence-transformers
+torch
+jupyter
